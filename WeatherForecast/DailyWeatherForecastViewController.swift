@@ -29,11 +29,11 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        //let nibWeekly :UINib = UINib(nibName: "WeeklyCollectionViewCell", bundle: nil)
-        //let nibDaily :UINib = UINib(nibName: "DailyTableViewCell", bundle: nil)
+        let nibWeekly :UINib = UINib(nibName: "WeeklyCollectionViewCell", bundle: nil)
+        let nibDaily :UINib = UINib(nibName: "DailyTableViewCell", bundle: nil)
         
-        //collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "WeeklyCollectionViewCell")
-        //tableView.registerNib(nibDaily, forCellReuseIdentifier: "DailyTableViewCell")
+        collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "WeeklyCollectionViewCell")
+        tableView.registerNib(nibDaily, forCellReuseIdentifier: "DailyTableViewCell")
         
         getDailyWeather()
     }
@@ -123,7 +123,7 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WeeklyCell", forIndexPath: indexPath) as! WeeklyCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WeeklyCollectionViewCell", forIndexPath: indexPath) as! WeeklyCollectionViewCell
         configureCell(cell, forItemAtIndexPath: indexPath)
         return cell
     }

@@ -15,7 +15,6 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
-    @IBOutlet weak var popLabel: UILabel! //pop : probability of precipitation
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
@@ -24,6 +23,17 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        //let nibWeekly :UINib = UINib(nibName: "WeeklyCollectionViewCell", bundle: nil)
+        //let nibDaily :UINib = UINib(nibName: "DailyTableViewCell", bundle: nil)
+        
+        //collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "WeeklyCollectionViewCell")
+        //tableView.registerNib(nibDaily, forCellReuseIdentifier: "DailyTableViewCell")
         
         getDailyWeather()
     }
@@ -122,10 +132,12 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
         
     }
     
+    /*
     func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
         let view =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "WeeklyCell", forIndexPath: indexPath) as! WeeklyCollectionViewCell
         return view
     }
+    */
     
     
 

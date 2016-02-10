@@ -4,7 +4,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Daily Weather Forecast View Controller-->
@@ -19,29 +18,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-RH-RER">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="日付" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ado-RH-RER">
                                 <rect key="frame" x="45" y="86.5" width="34" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天気" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-5g-HXL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="天気" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LWc-5g-HXL">
                                 <rect key="frame" x="45" y="246" width="195" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="降水確率" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z2C-kG-a4c">
-                                <rect key="frame" x="45" y="275" width="195" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="195" id="BZL-i2-bDC"/>
-                                    <constraint firstAttribute="height" constant="21" id="kLK-2k-86m"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ooo-IR-BoN">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ooo-IR-BoN">
                                 <rect key="frame" x="45" y="110" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="16t-Hc-6uj"/>
@@ -81,21 +70,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Z2C-kG-a4c" firstAttribute="leading" secondItem="Ooo-IR-BoN" secondAttribute="leading" id="3UF-HG-ZtT"/>
-                            <constraint firstItem="Z2C-kG-a4c" firstAttribute="trailing" secondItem="LWc-5g-HXL" secondAttribute="trailing" id="4Ha-uw-Uqw"/>
-                            <constraint firstItem="Z2C-kG-a4c" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="25" id="6Ly-fP-QsZ"/>
-                            <constraint firstItem="J6O-F3-MsX" firstAttribute="top" secondItem="Z2C-kG-a4c" secondAttribute="bottom" constant="8" symbolic="YES" id="9sd-6g-pIY"/>
                             <constraint firstItem="Ooo-IR-BoN" firstAttribute="top" secondItem="Ado-RH-RER" secondAttribute="bottom" constant="3" id="Cbs-kC-R86"/>
                             <constraint firstItem="vpF-cX-8Ou" firstAttribute="width" secondItem="J6O-F3-MsX" secondAttribute="width" id="Ej2-m8-h42"/>
                             <constraint firstItem="LWc-5g-HXL" firstAttribute="top" secondItem="Ooo-IR-BoN" secondAttribute="bottom" constant="8" symbolic="YES" id="F1k-pW-Yr5"/>
                             <constraint firstItem="Ooo-IR-BoN" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="110" id="FsC-cr-rkZ"/>
                             <constraint firstItem="vpF-cX-8Ou" firstAttribute="width" secondItem="J6O-F3-MsX" secondAttribute="height" multiplier="75:16" id="G1t-87-9gz"/>
                             <constraint firstItem="J6O-F3-MsX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="J72-qu-dJZ"/>
-                            <constraint firstItem="Z2C-kG-a4c" firstAttribute="top" secondItem="LWc-5g-HXL" secondAttribute="bottom" constant="8" symbolic="YES" id="LyC-r0-wg7"/>
                             <constraint firstItem="vpF-cX-8Ou" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="XpW-YD-ZJH"/>
-                            <constraint firstItem="Z2C-kG-a4c" firstAttribute="leading" secondItem="LWc-5g-HXL" secondAttribute="leading" id="aDK-pr-rwr"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="J6O-F3-MsX" secondAttribute="bottom" constant="168" id="b5i-LN-pl7"/>
-                            <constraint firstItem="Z2C-kG-a4c" firstAttribute="leading" secondItem="Ado-RH-RER" secondAttribute="leading" id="g1d-wd-8HJ"/>
                             <constraint firstItem="J6O-F3-MsX" firstAttribute="leading" secondItem="vpF-cX-8Ou" secondAttribute="leading" id="lKq-Pe-yQA"/>
                             <constraint firstAttribute="trailing" secondItem="J6O-F3-MsX" secondAttribute="trailing" id="zAD-4e-14g"/>
                         </constraints>
@@ -106,7 +88,6 @@
                     <connections>
                         <outlet property="collectionView" destination="J6O-F3-MsX" id="cjf-Uc-af9"/>
                         <outlet property="dateLabel" destination="Ado-RH-RER" id="QEe-od-zRs"/>
-                        <outlet property="popLabel" destination="Z2C-kG-a4c" id="Nrn-tc-auN"/>
                         <outlet property="tableView" destination="vpF-cX-8Ou" id="RrI-Ir-i6l"/>
                         <outlet property="weatherImageView" destination="Ooo-IR-BoN" id="vh5-gP-Vqm"/>
                         <outlet property="weatherLabel" destination="LWc-5g-HXL" id="Uzd-eu-VKn"/>

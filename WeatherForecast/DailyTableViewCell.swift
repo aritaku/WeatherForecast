@@ -14,6 +14,7 @@ class DailyTableViewCell: UITableViewCell {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var minimumLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

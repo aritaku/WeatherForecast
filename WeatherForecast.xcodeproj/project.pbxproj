@@ -16,6 +16,10 @@
 		E8BAE1C21C68A23500C1ACB7 /* WeatherForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1C11C68A23500C1ACB7 /* WeatherForecastTests.swift */; };
 		E8BAE1CD1C68A23500C1ACB7 /* WeatherForecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1CC1C68A23500C1ACB7 /* WeatherForecastUITests.swift */; };
 		E8BAE1DB1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1DA1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift */; };
+		E8BAE1DF1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1DD1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift */; };
+		E8BAE1E01C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BAE1DE1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib */; };
+		E8BAE1E31C6AE33300C1ACB7 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1E11C6AE33300C1ACB7 /* DailyTableViewCell.swift */; };
+		E8BAE1E41C6AE33300C1ACB7 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BAE1E21C6AE33300C1ACB7 /* DailyTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,10 @@
 		E8BAE1CC1C68A23500C1ACB7 /* WeatherForecastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastUITests.swift; sourceTree = "<group>"; };
 		E8BAE1CE1C68A23500C1ACB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8BAE1DA1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherForecastViewController.swift; sourceTree = "<group>"; };
+		E8BAE1DD1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionViewCell.swift; sourceTree = "<group>"; };
+		E8BAE1DE1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeeklyCollectionViewCell.xib; sourceTree = "<group>"; };
+		E8BAE1E11C6AE33300C1ACB7 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
+		E8BAE1E21C6AE33300C1ACB7 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,7 @@
 				E8BAE1AC1C68A23500C1ACB7 /* AppDelegate.swift */,
 				E8BAE1AE1C68A23500C1ACB7 /* ViewController.swift */,
 				E8BAE1DA1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift */,
+				E8BAE1E51C6AE35200C1ACB7 /* Components */,
 				E8BAE1DC1C68E3C700C1ACB7 /* Model */,
 				E8BAE1B01C68A23500C1ACB7 /* Main.storyboard */,
 				E8BAE1B31C68A23500C1ACB7 /* Assets.xcassets */,
@@ -158,6 +167,17 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		E8BAE1E51C6AE35200C1ACB7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				E8BAE1DD1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift */,
+				E8BAE1DE1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib */,
+				E8BAE1E11C6AE33300C1ACB7 /* DailyTableViewCell.swift */,
+				E8BAE1E21C6AE33300C1ACB7 /* DailyTableViewCell.xib */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +288,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BAE1B71C68A23500C1ACB7 /* LaunchScreen.storyboard in Resources */,
+				E8BAE1E41C6AE33300C1ACB7 /* DailyTableViewCell.xib in Resources */,
+				E8BAE1E01C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib in Resources */,
 				E8BAE1B41C68A23500C1ACB7 /* Assets.xcassets in Resources */,
 				E8BAE1B21C68A23500C1ACB7 /* Main.storyboard in Resources */,
 			);
@@ -343,6 +365,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BAE1AF1C68A23500C1ACB7 /* ViewController.swift in Sources */,
+				E8BAE1E31C6AE33300C1ACB7 /* DailyTableViewCell.swift in Sources */,
+				E8BAE1DF1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift in Sources */,
 				E8BAE1DB1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift in Sources */,
 				E8BAE1AD1C68A23500C1ACB7 /* AppDelegate.swift in Sources */,
 			);

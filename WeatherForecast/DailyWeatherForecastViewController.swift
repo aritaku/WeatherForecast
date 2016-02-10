@@ -11,17 +11,19 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class DailyWeatherForecastViewController: UIViewController {
+class DailyWeatherForecastViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var popLabel: UILabel! //pop : probability of precipitation
     @IBOutlet weak var weatherImageView: UIImageView!
-
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var tableView: UITableView!
     
     let LivedoorWeatherServiceURL = "http://weather.livedoor.com/forecast/webservice/json/v1?"
 
     override func viewDidLoad() {
-               super.viewDidLoad()
+        super.viewDidLoad()
         
         getDailyWeather()
     }
@@ -52,6 +54,77 @@ class DailyWeatherForecastViewController: UIViewController {
                 
             }
         }
+    }
+    
+    //MARK: UITableViewDataSource
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("DailyTableViewCell", forIndexPath: indexPath) as! DailyTableViewCell
+        configureCell(cell, forRowAtIndexPath: indexPath)
+        return cell
+    }
+    
+    func configureCell(cell: UITableViewCell, forRowAtIndexPath: NSIndexPath) {
+        
+    }
+    
+    //MARK: UITableViewDelegate
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+    }
+    
+//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+//        
+//    }
+//    
+//    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        
+//    }
+//    
+//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        
+//    }
+//    
+//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        
+//    }
+//    
+//    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        
+//    }
+    
+    //MARK: UICollectionViewDataSource
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WeeklyCell", forIndexPath: indexPath) as! WeeklyCollectionViewCell
+        configureCell(cell, forItemAtIndexPath: indexPath)
+        return cell
+    }
+    
+    func configureCell(cell: UICollectionViewCell, forItemAtIndexPath: NSIndexPath) {
+        
+    }
+    
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let view =  collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "WeeklyCell", forIndexPath: indexPath) as! WeeklyCollectionViewCell
+        return view
     }
     
     

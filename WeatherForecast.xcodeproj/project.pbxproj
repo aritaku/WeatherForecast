@@ -20,6 +20,7 @@
 		E8BAE1E01C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BAE1DE1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib */; };
 		E8BAE1E31C6AE33300C1ACB7 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1E11C6AE33300C1ACB7 /* DailyTableViewCell.swift */; };
 		E8BAE1E41C6AE33300C1ACB7 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BAE1E21C6AE33300C1ACB7 /* DailyTableViewCell.xib */; };
+		E8BAE1E71C6AED6200C1ACB7 /* Profilie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1E61C6AED6200C1ACB7 /* Profilie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		E8BAE1DE1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeeklyCollectionViewCell.xib; sourceTree = "<group>"; };
 		E8BAE1E11C6AE33300C1ACB7 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
 		E8BAE1E21C6AE33300C1ACB7 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		E8BAE1E61C6AED6200C1ACB7 /* Profilie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profilie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +167,7 @@
 		E8BAE1DC1C68E3C700C1ACB7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E8BAE1E61C6AED6200C1ACB7 /* Profilie.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -251,6 +254,11 @@
 				TargetAttributes = {
 					E8BAE1A81C68A23500C1ACB7 = {
 						CreatedOnToolsVersion = 7.2.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					E8BAE1BC1C68A23500C1ACB7 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -369,6 +377,7 @@
 				E8BAE1DF1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift in Sources */,
 				E8BAE1DB1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift in Sources */,
 				E8BAE1AD1C68A23500C1ACB7 /* AppDelegate.swift in Sources */,
+				E8BAE1E71C6AED6200C1ACB7 /* Profilie.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

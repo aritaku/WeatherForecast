@@ -15,6 +15,7 @@ class WeeklyCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tenkou: UILabel!
     @IBOutlet weak var max: UILabel!
     @IBOutlet weak var minimum: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

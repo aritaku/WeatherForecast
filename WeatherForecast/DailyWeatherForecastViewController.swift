@@ -29,11 +29,11 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        let nibWeekly :UINib = UINib(nibName: "WeeklyCollectionViewCell", bundle: nil)
-        let nibDaily :UINib = UINib(nibName: "DailyTableViewCell", bundle: nil)
+        let nibWeekly :UINib = UINib(nibName: "DailyCollectionViewCell", bundle: nil)
+        let nibDaily :UINib = UINib(nibName: "WeeklyTableViewCell", bundle: nil)
         
-        collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "WeeklyCollectionViewCell")
-        tableView.registerNib(nibDaily, forCellReuseIdentifier: "DailyTableViewCell")
+        collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "DailyCollectionViewCell")
+        tableView.registerNib(nibDaily, forCellReuseIdentifier: "WeeklyTableViewCell")
         
         getDailyWeather()
     }
@@ -77,7 +77,7 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DailyTableViewCell", forIndexPath: indexPath) as! DailyTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("WeeklyTableViewCell", forIndexPath: indexPath) as! WeeklyTableViewCell
         configureCell(cell, forRowAtIndexPath: indexPath)
         return cell
     }
@@ -123,7 +123,7 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("WeeklyCollectionViewCell", forIndexPath: indexPath) as! WeeklyCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("DailyCollectionViewCell", forIndexPath: indexPath) as! DailyCollectionViewCell
         configureCell(cell, forItemAtIndexPath: indexPath)
         return cell
     }

@@ -16,10 +16,10 @@
 		E8BAE1C21C68A23500C1ACB7 /* WeatherForecastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1C11C68A23500C1ACB7 /* WeatherForecastTests.swift */; };
 		E8BAE1CD1C68A23500C1ACB7 /* WeatherForecastUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1CC1C68A23500C1ACB7 /* WeatherForecastUITests.swift */; };
 		E8BAE1DB1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1DA1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift */; };
-		E8BAE1DF1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1DD1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift */; };
-		E8BAE1E01C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BAE1DE1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib */; };
-		E8BAE1E31C6AE33300C1ACB7 /* DailyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1E11C6AE33300C1ACB7 /* DailyTableViewCell.swift */; };
-		E8BAE1E41C6AE33300C1ACB7 /* DailyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BAE1E21C6AE33300C1ACB7 /* DailyTableViewCell.xib */; };
+		E8BAE1DF1C6AE21A00C1ACB7 /* DailyCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1DD1C6AE21A00C1ACB7 /* DailyCollectionViewCell.swift */; };
+		E8BAE1E01C6AE21A00C1ACB7 /* DailyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BAE1DE1C6AE21A00C1ACB7 /* DailyCollectionViewCell.xib */; };
+		E8BAE1E31C6AE33300C1ACB7 /* WeeklyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1E11C6AE33300C1ACB7 /* WeeklyTableViewCell.swift */; };
+		E8BAE1E41C6AE33300C1ACB7 /* WeeklyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E8BAE1E21C6AE33300C1ACB7 /* WeeklyTableViewCell.xib */; };
 		E8BAE1E71C6AED6200C1ACB7 /* Profilie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8BAE1E61C6AED6200C1ACB7 /* Profilie.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,10 +58,10 @@
 		E8BAE1CC1C68A23500C1ACB7 /* WeatherForecastUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastUITests.swift; sourceTree = "<group>"; };
 		E8BAE1CE1C68A23500C1ACB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E8BAE1DA1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyWeatherForecastViewController.swift; sourceTree = "<group>"; };
-		E8BAE1DD1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyCollectionViewCell.swift; sourceTree = "<group>"; };
-		E8BAE1DE1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeeklyCollectionViewCell.xib; sourceTree = "<group>"; };
-		E8BAE1E11C6AE33300C1ACB7 /* DailyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyTableViewCell.swift; sourceTree = "<group>"; };
-		E8BAE1E21C6AE33300C1ACB7 /* DailyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyTableViewCell.xib; sourceTree = "<group>"; };
+		E8BAE1DD1C6AE21A00C1ACB7 /* DailyCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DailyCollectionViewCell.swift; sourceTree = "<group>"; };
+		E8BAE1DE1C6AE21A00C1ACB7 /* DailyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DailyCollectionViewCell.xib; sourceTree = "<group>"; };
+		E8BAE1E11C6AE33300C1ACB7 /* WeeklyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyTableViewCell.swift; sourceTree = "<group>"; };
+		E8BAE1E21C6AE33300C1ACB7 /* WeeklyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeeklyTableViewCell.xib; sourceTree = "<group>"; };
 		E8BAE1E61C6AED6200C1ACB7 /* Profilie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profilie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -175,10 +175,10 @@
 		E8BAE1E51C6AE35200C1ACB7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E8BAE1DD1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift */,
-				E8BAE1DE1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib */,
-				E8BAE1E11C6AE33300C1ACB7 /* DailyTableViewCell.swift */,
-				E8BAE1E21C6AE33300C1ACB7 /* DailyTableViewCell.xib */,
+				E8BAE1DD1C6AE21A00C1ACB7 /* DailyCollectionViewCell.swift */,
+				E8BAE1DE1C6AE21A00C1ACB7 /* DailyCollectionViewCell.xib */,
+				E8BAE1E11C6AE33300C1ACB7 /* WeeklyTableViewCell.swift */,
+				E8BAE1E21C6AE33300C1ACB7 /* WeeklyTableViewCell.xib */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -296,8 +296,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BAE1B71C68A23500C1ACB7 /* LaunchScreen.storyboard in Resources */,
-				E8BAE1E41C6AE33300C1ACB7 /* DailyTableViewCell.xib in Resources */,
-				E8BAE1E01C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.xib in Resources */,
+				E8BAE1E41C6AE33300C1ACB7 /* WeeklyTableViewCell.xib in Resources */,
+				E8BAE1E01C6AE21A00C1ACB7 /* DailyCollectionViewCell.xib in Resources */,
 				E8BAE1B41C68A23500C1ACB7 /* Assets.xcassets in Resources */,
 				E8BAE1B21C68A23500C1ACB7 /* Main.storyboard in Resources */,
 			);
@@ -373,8 +373,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E8BAE1AF1C68A23500C1ACB7 /* ViewController.swift in Sources */,
-				E8BAE1E31C6AE33300C1ACB7 /* DailyTableViewCell.swift in Sources */,
-				E8BAE1DF1C6AE21A00C1ACB7 /* WeeklyCollectionViewCell.swift in Sources */,
+				E8BAE1E31C6AE33300C1ACB7 /* WeeklyTableViewCell.swift in Sources */,
+				E8BAE1DF1C6AE21A00C1ACB7 /* DailyCollectionViewCell.swift in Sources */,
 				E8BAE1DB1C68E3C000C1ACB7 /* DailyWeatherForecastViewController.swift in Sources */,
 				E8BAE1AD1C68A23500C1ACB7 /* AppDelegate.swift in Sources */,
 				E8BAE1E71C6AED6200C1ACB7 /* Profilie.swift in Sources */,

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class WeeklyCollectionViewCell: UICollectionViewCell {
+class DailyCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
-    @IBOutlet weak var tenkou: UILabel!
-    @IBOutlet weak var max: UILabel!
-    @IBOutlet weak var minimum: UILabel!
+    @IBOutlet weak var tenkouLabel: UILabel!
+    @IBOutlet weak var maxLabel: UILabel!
+    @IBOutlet weak var minimumLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -20,12 +20,14 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons" translatesAutoresizingMaskIntoConstraints="NO" id="nya-D9-9H8">
                                 <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="nya-D9-9H8" secondAttribute="height" multiplier="1:1" id="TAZ-iu-tdm"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="nya-D9-9H8" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="PcL-S9-CoQ"/>
-                            <constraint firstItem="nya-D9-9H8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="2:5" id="cjl-47-ZXM"/>
                             <constraint firstItem="nya-D9-9H8" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="jEJ-MM-eim"/>
                             <constraint firstItem="nya-D9-9H8" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="160" id="xze-5b-Jw7"/>
                         </constraints>

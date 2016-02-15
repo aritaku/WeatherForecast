@@ -19,10 +19,10 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/10(火)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmz-D9-bqn">
                         <rect key="frame" x="8" y="-1" width="62" height="45"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nqm-xd-Djm">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nqm-xd-Djm">
                         <rect key="frame" x="86" y="-1" width="44" height="45"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="44" id="IQk-wM-nej"/>
@@ -66,4 +66,7 @@
             <point key="canvasLocation" x="366" y="288"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="mockIcon" width="513" height="718"/>
+    </resources>
 </document>

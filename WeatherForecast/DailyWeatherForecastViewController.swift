@@ -13,29 +13,40 @@ import SwiftyJSON
 
 class DailyWeatherForecastViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var maxTemparatureLabel: UILabel!
+    @IBOutlet weak var minimumTemparatureLabel: UILabel!
     
-    let LivedoorWeatherServiceURL = "http://weather.livedoor.com/forecast/webservice/json/v1?"
+    let OpenWeatherMapURL = "http://api.openweathermap.org/data/2.5/forecast/daily?&units=metric&cnt=7&APPID=a95b3f19140f63337f067f78e5848566"
+    
+    var iconName: String = ""
+    var cityName: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //MARK: TableView Initialize
         tableView.delegate = self
         tableView.dataSource = self
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        let nibWeekly :UINib = UINib(nibName: "DailyCollectionViewCell", bundle: nil)
+        tableView.allowsSelection = false
         let nibDaily :UINib = UINib(nibName: "WeeklyTableViewCell", bundle: nil)
-        
-        collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "DailyCollectionViewCell")
         tableView.registerNib(nibDaily, forCellReuseIdentifier: "WeeklyTableViewCell")
         
-        getDailyWeather()
+        //MARK: CollectionView Initialize
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        cvLayout()
+        let nibWeekly :UINib = UINib(nibName: "DailyCollectionViewCell", bundle: nil)
+        collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "DailyCollectionViewCell")
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        //getDailyWeather()
+        self.title = "現在地"
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,24 +54,34 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
+    func cvLayout(){
+        let cvlayout = UICollectionViewFlowLayout()
+        cvlayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 0) //top, left, bottom, right
+        cvlayout.minimumInteritemSpacing = 0.0
+        cvlayout.minimumLineSpacing = 0.0
+    }
+    
 
     func getDailyWeather(){
+        let weatherIconURL = "http://openweathermap.org/img/w/\(iconName).png"
         
-        Alamofire.request(.GET, LivedoorWeatherServiceURL, parameters: ["city":400040]).responseJSON{ response in
+        cityName = "London,uk"
+        
+        Alamofire.request(.GET, OpenWeatherMapURL, parameters: ["q": cityName]).responseJSON{ response in
             guard let object = response.result.value else {
-                print("false")
+                print("json false")
                 return
             }
             
             let json  = JSON(object)
             json.forEach { (_,String) in
-                print(json["forecasts"][0])
-                self.dateLabel.text = json["forecasts"][0]["date"].string
-                self.weatherLabel.text = json["forecasts"][0]["telop"].string
-//                let url :NSURL = NSURL(string: json["forecasts"][0]["image"]["url"].string!)!
-//                let imageData :NSData = NSData(contentsOfURL: url)!
+                print(json)
+                self.iconName = json["list"][1]["weather"]["icon"].string!
+                //let url :NSURL = NSURL(string: weatherIconURL)!
+                //let imageData :NSData = NSData(contentsOfURL: url)!
 //                let image :UIImage = UIImage(data: imageData)!
-//                self.weatherImageView = UIImageView(image: image)
+//                self.weatherImageView.image = image
+                //self.title = json["location"]["city"].string
                 
             }
         }

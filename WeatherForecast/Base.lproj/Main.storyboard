@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Daily Weather Forecast View Controller-->
@@ -157,7 +158,13 @@
                             <constraint firstItem="QbG-hs-uU3" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="jMe-Db-iSJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Dxg-FA-fTo"/>
+                    <navigationItem key="navigationItem" id="Dxg-FA-fTo">
+                        <barButtonItem key="rightBarButtonItem" title="地域選択" id="8ez-UA-5vR">
+                            <connections>
+                                <segue destination="u9X-Us-cgy" kind="push" id="C2N-km-P4h"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="J6O-F3-MsX" id="cjf-Uc-af9"/>
                         <outlet property="maxTemparatureLabel" destination="xru-VH-hHw" id="sL5-Oq-cjs"/>
@@ -170,6 +177,47 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1190" y="339"/>
+        </scene>
+        <!--Location Setting View Controller-->
+        <scene sceneID="N2k-P1-TSF">
+            <objects>
+                <viewController id="u9X-Us-cgy" customClass="LocationSettingViewController" customModule="WeatherForecast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NUM-9g-4an"/>
+                        <viewControllerLayoutGuide type="bottom" id="Jdc-FG-PEh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EOJ-gk-fym">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RCU-T1-K0Y">
+                                <rect key="frame" x="0.0" y="126" width="600" height="216"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="天気を見る地区を選択してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Xt-L5-GLz">
+                                <rect key="frame" x="164" y="97" width="272" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RCU-T1-K0Y" firstAttribute="top" secondItem="EOJ-gk-fym" secondAttribute="top" constant="126" id="Rih-iS-iYf"/>
+                            <constraint firstItem="RCU-T1-K0Y" firstAttribute="leading" secondItem="EOJ-gk-fym" secondAttribute="leading" id="TIg-EU-LYh"/>
+                            <constraint firstItem="6Xt-L5-GLz" firstAttribute="centerX" secondItem="RCU-T1-K0Y" secondAttribute="centerX" id="UZb-vQ-6OJ"/>
+                            <constraint firstItem="RCU-T1-K0Y" firstAttribute="top" secondItem="6Xt-L5-GLz" secondAttribute="bottom" constant="8" id="VQT-id-gEu"/>
+                            <constraint firstItem="6Xt-L5-GLz" firstAttribute="centerX" secondItem="EOJ-gk-fym" secondAttribute="centerX" id="Vov-Wx-G5h"/>
+                            <constraint firstItem="6Xt-L5-GLz" firstAttribute="top" secondItem="EOJ-gk-fym" secondAttribute="topMargin" constant="97" id="rHL-0w-csb"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="10k-FM-mjr"/>
+                    <connections>
+                        <outlet property="locationPickerView" destination="RCU-T1-K0Y" id="f9q-wq-C2u"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cNQ-MN-Hc6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="339"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B9I-gN-PIu">

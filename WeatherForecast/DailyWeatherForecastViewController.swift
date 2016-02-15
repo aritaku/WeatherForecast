@@ -41,11 +41,11 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
         let nibWeekly :UINib = UINib(nibName: "DailyCollectionViewCell", bundle: nil)
         collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "DailyCollectionViewCell")
         
+        getDailyWeather()
+        self.title = "現在地"
     }
     
     override func viewWillAppear(animated: Bool) {
-        getDailyWeather()
-        self.title = "現在地"
     }
 
     override func didReceiveMemoryWarning() {
@@ -75,12 +75,16 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
             let json  = JSON(object)
             json.forEach { (_,String) in
                 print(json)
+                
+                //icon setting
                 self.iconName = json["list"][0]["weather"][0]["icon"].string!
                 let weatherIconURL = "http://openweathermap.org/img/w/\(self.iconName).png"
                 let url: NSURL = NSURL(string: weatherIconURL)!
                 let imageData: NSData = NSData(contentsOfURL: url)!
                 let image: UIImage = UIImage(data: imageData)!
                 self.weatherImageView.image = image
+                
+                //labels setting
                 self.title = self.cityName
                 self.minimumTemparatureLabel.text = "\(json["list"][0]["temp"]["min"].float!)℃"
                 self.maxTemparatureLabel.text = "\(json["list"][0]["temp"]["max"].float!)℃"
@@ -113,26 +117,6 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
-    
-//    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-//        
-//    }
-//    
-//    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        
-//    }
-//    
-//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        
-//    }
-//    
-//    func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        
-//    }
-//    
-//    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        
-//    }
     
     //MARK: UICollectionViewDataSource
     

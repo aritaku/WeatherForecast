@@ -8,6 +8,7 @@
 
 //import UIKit
 //import CoreLocation
+//import RealmSwift
 //
 //class GetGeoData: Object {
 //    

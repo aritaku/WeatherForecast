@@ -20,9 +20,14 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     @IBOutlet weak var minimumTemparatureLabel: UILabel!
     
     let OpenWeatherMapURL = "http://api.openweathermap.org/data/2.5/forecast/daily?&units=metric&cnt=7&APPID=a95b3f19140f63337f067f78e5848566"
+    let prefectures: NSArray =
+    ["Hokkaido","Aomori","Iwate","Miyagi","Akita","Yamagata","Hukusima","Ibaragi","Totigi","Gunnma","Saitama","Tiba","Tokyo","Kanagawa","Niigata","Toyama","Ishikawa","Hukui","Yamanashi","Nagano","Gifu","Shizuoka","Aichi","Mie","Shiga","Kyoto","Osaka","Hyogo","Nara","Wakayama","Tottori","Shimane","Okayama","Hiroshima","Yamaguchi","Tokushima","Kagawa","Aichi","Kochi","Fukuoka","Saga","Nagasaki","Kumamoto","Oita","Miyazaki","Kagoshima","Okinawa"
+    ]
     
     var iconName: String = ""
-    var cityName: String = ""
+    
+    var weatherInfo: [[String: String?]] = []
+    var appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,11 +46,15 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
         let nibWeekly :UINib = UINib(nibName: "DailyCollectionViewCell", bundle: nil)
         collectionView.registerNib(nibWeekly, forCellWithReuseIdentifier: "DailyCollectionViewCell")
         
-        getDailyWeather()
-        self.title = "現在地"
+        self.title = appDelegate.city
     }
     
+    
     override func viewWillAppear(animated: Bool) {
+        getDailyWeatherJson(prefectures[appDelegate.row!] as! String)
+        self.title = appDelegate.city
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -56,19 +65,18 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     //collection view layout
     func cvLayout(){
         let cvlayout = UICollectionViewFlowLayout()
-        cvlayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 0) //top, left, bottom, right
+        cvlayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0) //top, left, bottom, right
         cvlayout.minimumInteritemSpacing = 0.0
         cvlayout.minimumLineSpacing = 0.0
     }
     
     //get json
-    func getDailyWeather(){
+    func getDailyWeatherJson(city: String){
         
-        cityName = "Tokyo,jp"
         
-        Alamofire.request(.GET, OpenWeatherMapURL, parameters: ["q": cityName]).responseJSON{ response in
+        Alamofire.request(.GET, OpenWeatherMapURL, parameters: ["q": city]).responseJSON{ response in
             guard let object = response.result.value else {
-                print("json false")
+                print("false getting json")
                 return
             }
             
@@ -76,6 +84,16 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
             json.forEach { (_,String) in
                 print(json)
                 
+//                for (var i = 0; i < 7; i++){
+//                    let info: [String: String?] = [
+//                        "main": json["list"][i]["weather"][0]["main"].string,
+//                        "iconName": json["list"][i]["weather"][0]["icon"].string,
+//                        "maxTemp": String(json["list"][i]["temp"]["max"].float),
+//                        "minTemp": Strng(json["list"][i]["temp"]["min"].float)
+//                    ]
+//                    self.weatherInfo.append(info)
+//                }
+//            }
                 //icon setting
                 self.iconName = json["list"][0]["weather"][0]["icon"].string!
                 let weatherIconURL = "http://openweathermap.org/img/w/\(self.iconName).png"
@@ -85,13 +103,13 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
                 self.weatherImageView.image = image
                 
                 //labels setting
-                self.title = self.cityName
                 self.minimumTemparatureLabel.text = "\(json["list"][0]["temp"]["min"].float!)℃"
                 self.maxTemparatureLabel.text = "\(json["list"][0]["temp"]["max"].float!)℃"
+                self.weatherLabel.text = json["list"][0]["weather"][0]["main"].string!
+
             }
         }
     }
-    
     //MARK: UITableViewDataSource
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -104,7 +122,8 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("WeeklyTableViewCell", forIndexPath: indexPath) as! WeeklyTableViewCell
-        configureCell(cell, forRowAtIndexPath: indexPath)
+        
+        //configureCell(cell, forRowAtIndexPath: indexPath)
         return cell
     }
     

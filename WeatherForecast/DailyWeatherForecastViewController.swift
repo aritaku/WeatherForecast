@@ -4,7 +4,6 @@
 //
 //  Created by 有村琢磨 on 2016/02/08.
 //  Copyright © 2016年 有村琢磨. All rights reserved.
-//  use api from http://weather.livedoor.com/weather_hacks/webservice
 //
 
 import UIKit
@@ -28,14 +27,14 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //MARK: TableView Initialize
+        //TableView Initialize
         tableView.delegate = self
         tableView.dataSource = self
         tableView.allowsSelection = false
         let nibDaily :UINib = UINib(nibName: "WeeklyTableViewCell", bundle: nil)
         tableView.registerNib(nibDaily, forCellReuseIdentifier: "WeeklyTableViewCell")
         
-        //MARK: CollectionView Initialize
+        //CollectionView Initialize
         collectionView.delegate = self
         collectionView.dataSource = self
         cvLayout()
@@ -45,7 +44,7 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     }
     
     override func viewWillAppear(animated: Bool) {
-        //getDailyWeather()
+        getDailyWeather()
         self.title = "現在地"
     }
 
@@ -54,6 +53,7 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
     
+    //collection view layout
     func cvLayout(){
         let cvlayout = UICollectionViewFlowLayout()
         cvlayout.sectionInset = UIEdgeInsetsMake(0, 5, 0, 0) //top, left, bottom, right
@@ -61,11 +61,10 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
         cvlayout.minimumLineSpacing = 0.0
     }
     
-
+    //get json
     func getDailyWeather(){
-        let weatherIconURL = "http://openweathermap.org/img/w/\(iconName).png"
         
-        cityName = "London,uk"
+        cityName = "Tokyo,jp"
         
         Alamofire.request(.GET, OpenWeatherMapURL, parameters: ["q": cityName]).responseJSON{ response in
             guard let object = response.result.value else {
@@ -76,13 +75,15 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
             let json  = JSON(object)
             json.forEach { (_,String) in
                 print(json)
-                self.iconName = json["list"][1]["weather"]["icon"].string!
-                //let url :NSURL = NSURL(string: weatherIconURL)!
-                //let imageData :NSData = NSData(contentsOfURL: url)!
-//                let image :UIImage = UIImage(data: imageData)!
-//                self.weatherImageView.image = image
-                //self.title = json["location"]["city"].string
-                
+                self.iconName = json["list"][0]["weather"][0]["icon"].string!
+                let weatherIconURL = "http://openweathermap.org/img/w/\(self.iconName).png"
+                let url: NSURL = NSURL(string: weatherIconURL)!
+                let imageData: NSData = NSData(contentsOfURL: url)!
+                let image: UIImage = UIImage(data: imageData)!
+                self.weatherImageView.image = image
+                self.title = self.cityName
+                self.minimumTemparatureLabel.text = "\(json["list"][0]["temp"]["min"].float!)℃"
+                self.maxTemparatureLabel.text = "\(json["list"][0]["temp"]["max"].float!)℃"
             }
         }
     }
@@ -140,7 +141,7 @@ class DailyWeatherForecastViewController: UIViewController, UITableViewDataSourc
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 24
+        return 8
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

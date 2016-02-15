@@ -8,12 +8,13 @@
 
 import UIKit
 
-class DailyTableViewCell: UITableViewCell {
+class WeeklyTableViewCell: UITableViewCell {
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherImageView: UIImageView!
-    @IBOutlet weak var maxLabel: UILabel!
     @IBOutlet weak var minimumLabel: UILabel!
+    @IBOutlet weak var maxLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
